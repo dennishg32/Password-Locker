@@ -14,5 +14,12 @@ class Credential:
     self.accountName = accountName
     self.l_username = l_username
     self.l_password = l_password
+  
+  def saveAccount(self):
+    """
+      creates function for saving objects in account list
+    """
+    Credential.accountList.append(self)
     
+  
   
