@@ -50,6 +50,22 @@ class TestAccount(unittest.TestCase):
     testAccount.saveAccount()
     self.assertEqual(len(Credential.accountList),2)
     
+    
+  def deleteAccountTest(self):
+    """
+      this function delete account check if test has passed from account list
+    """
+    self.newAccount.saveAccount()
+    testAccount = Credential(
+      "Twitter",
+      "dennishg250",
+      "moriinga03")
+    testAccount.saveAccount()
+    self.newAccount.deleteAccount()
+    self.assertEqual(len(Credential.accountList),1)
+  
+  
+    
 if __name__ == "__main__":
   unittest.main()
     
