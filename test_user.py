@@ -1,5 +1,5 @@
 import unittest
-from user import User
+from User import User
 
 class TestUser(unittest.TestCase):  
   
@@ -18,11 +18,11 @@ class TestUser(unittest.TestCase):
     """
       test_init test case for object for initials
     """
-    self.assertEqual(self.newUser.fname, "Dennis")
-    self.assertEqual(self.newUser.lname, "HG")
+    self.assertEqual(self.newUser.first_name, "Dennis")
+    self.assertEqual(self.newUser.last_name, "HG")
     self.assertEqual(self.newUser.username, "deHg")
-    self.assertEqual(self.newUser.pwd, "kgl6")
-    self.assertEqual(self.newUser.pwd_conf, "kgl6")
+    self.assertEqual(self.newUser.password, "kgl6")
+    self.assertEqual(self.newUser.password_confirm, "kgl6")
     
   def test_saveUser(self):
     """
