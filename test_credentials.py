@@ -37,6 +37,19 @@ class TestAccount(unittest.TestCase):
   def tearDown(self):
     Credential.accountList = []
     
+  def test_saveMoreAccount(self):
+    """
+     this function helps us to save more than one account and test them
+    """
+    self.newAccount.saveAccount()
+    testAccount = Credential(
+      "facebook",
+      "hernandez",
+      "moringa02"
+    )
+    testAccount.saveAccount()
+    self.assertEqual(len(Credential.accountList),2)
+    
 if __name__ == "__main__":
   unittest.main()
     
