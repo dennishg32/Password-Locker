@@ -80,6 +80,12 @@ class TestAccount(unittest.TestCase):
     random = Credential.pwd_random()
     self.assertTrue(random)
     
+  def findallTest(self):
+    """
+      Function to test if we can find all accounts registered
+    """
+    self.assertDictEqual(Credential.findAll(), Credential.accountList)
+    
   def findByUsername(self):
     """
       function to test account by username
@@ -94,7 +100,7 @@ class TestAccount(unittest.TestCase):
     findbyUsername = Credential.findByuser()
     self.assertEqual(findbyUsername.l_username. testAccount.l_username)
     
-    
+  
     
     
     
