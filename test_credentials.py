@@ -86,6 +86,17 @@ class TestAccount(unittest.TestCase):
     """
     self.assertDictEqual(Credential.findAll(), Credential.accountList)
     
+  def testCheckExistingAccount(self):
+    self.newAccount.saveAccount()
+    testAccount = Credential(
+      "Ayoba",
+      "deno",
+      "dano"
+    )
+    testAccount.saveAccount()
+    existingAccount = Credential.existingAccount("Ayoba")
+    self.assertTrue(existingAccount)
+  
   def findByUsername(self):
     """
       function to test account by username
