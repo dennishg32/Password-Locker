@@ -8,5 +8,11 @@ class User:
     self.password = pwd
     self.password_confirm = pwd_conf
     
+  def saveUser (self):
+    """
+      this function saves user in user List
+    """
+    User.userList.append(self)
+    
   
     
