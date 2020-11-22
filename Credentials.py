@@ -54,12 +54,7 @@ class Credential:
   def pwd_random():
     """
     """
-    tochar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`;?/!<,>.@#$%^&*()_-+={[}]|\abcdefghijklmnopqrstuvwxz"
-    pwd = int(input("Enter your password: "))
-    inrange = [random.choice(tochar) 
-               for rand in range (pwd)
-               ]
-    password = "".join(inrange)
+    password = random.randint([a,z],[0,9],[A,Z])
     return password
   
   @classmethod

@@ -11,8 +11,8 @@ class TestUser(unittest.TestCase):
       "Dennis",
       "HG",
       "deHg",
-      "kgl6",
       "kgl6")
+    
     
   def test_init(self):
     """
@@ -22,7 +22,6 @@ class TestUser(unittest.TestCase):
     self.assertEqual(self.newUser.last_name, "HG")
     self.assertEqual(self.newUser.username, "deHg")
     self.assertEqual(self.newUser.password, "kgl6")
-    self.assertEqual(self.newUser.password_confirm, "kgl6")
     
   def test_saveUser(self):
     """
