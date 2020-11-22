@@ -1,4 +1,5 @@
-
+import random
+import pyperclip
 class Credential:
   """
     creation of a class that will generates instances
@@ -21,5 +22,49 @@ class Credential:
     """
     Credential.accountList.append(self)
     
+  def deleteAccount(self):
+    """
+      function to delete account and test it
+    """
+    Credential.accountList.remove(self)
+    
+  @classmethod
+  def findAll(cls):
+    """
+    """
+    return cls.accountList
   
+  @classmethod
+  def findByusername(cls, account):
+    """
+    """
+    for user in cls.accountList:
+      if user.accountName == account:
+        return user
+    
+  @classmethod
+  def copyPwd(cls, account):
+    """
+    """
+    findAccount = Credential.findByusername(account)
+    pyperclip.copy(findAccount.l_password)
+    
+  def pwd_random():
+    """
+    """
+    tochar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`;?/!<,>.@#$%^&*()_-+={[}]|\abcdefghijklmnopqrstuvwxz"
+    pwd = int(input("Enter your password: "))
+    inrange = [random.choice(tochar) 
+               for rand in range (pwd)
+               ]
+    password = "".join(inrange)
+    return password
   
+  @classmethod
+  def existingAccount(cls, account):
+    """
+    """
+    for acc in cls.accountList:
+      if acc.accountName == account:
+        return True
+    return False

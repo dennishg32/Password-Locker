@@ -84,7 +84,7 @@ class TestAccount(unittest.TestCase):
     """
       Function to test if we can find all accounts registered
     """
-    self.assertDictEqual(Credential.findAll(), Credential.accountList)
+    self.assertEqual(Credential.findAll(), Credential.accountList)
     
   def testCheckExistingAccount(self):
     """
