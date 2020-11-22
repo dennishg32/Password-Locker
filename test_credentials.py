@@ -87,6 +87,9 @@ class TestAccount(unittest.TestCase):
     self.assertDictEqual(Credential.findAll(), Credential.accountList)
     
   def testCheckExistingAccount(self):
+    """
+      Function to test and check if account exist or not
+    """
     self.newAccount.saveAccount()
     testAccount = Credential(
       "Ayoba",
