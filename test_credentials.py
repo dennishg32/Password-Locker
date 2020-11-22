@@ -17,6 +17,21 @@ class TestAccount(unittest.TestCase):
       "dennis_250", 
       "moringa01"
       )
-    
+  
+  def test_init(self):
+    """
+      this function is all about initial save test them if are properly initializeed
+    """
+    self.assertEqual(self.newAccount.accountName, "Instagram")
+    self.assertEqual(self.newAccount.l_username, "dennis_250")
+    self.assertEqual(self.newAccount.l_password, "moringa01")
+  
+  def test_saveAccount(self):
+    """
+      this is about save account and test them using account list
+    """
+    self.newAccount.saveAccount()
+    self.assertEqual(len(Credential.accountList),1)
+        
     
     
