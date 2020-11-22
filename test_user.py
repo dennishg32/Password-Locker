@@ -33,6 +33,12 @@ class TestUser(unittest.TestCase):
     
   def tearDown(self):
     User.userList = []
+    
+  def allUsers(self):
+    """
+      function to test all users
+    """
+    self.assertEqual(User.allusers(), User.userList)
 
 if __name__ == "__main__":
   unittest.main()
