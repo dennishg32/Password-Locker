@@ -28,7 +28,7 @@ class TestUser(unittest.TestCase):
     """
       this function is to check if user object saved in the user list
     """
-    self.newUser.save_user()
+    self.newUser.saveUser()
     self.assertEqual(len(User.userList),1)
     
   def tearDown(self):
