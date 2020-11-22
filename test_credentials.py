@@ -73,7 +73,12 @@ class TestAccount(unittest.TestCase):
     Credential.copyPwd('moriinga03')
     self.assertEqual(self.newAccount.l_password, pyperclip.paste())
   
-
+  def randomPwdGenerate(self):
+    """
+      Function to generate random password
+    """
+    random = Credential.pwd_random()
+    self.assertTrue(random)
     
     
     
