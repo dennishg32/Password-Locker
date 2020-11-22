@@ -1,4 +1,5 @@
 import unittest
+from unittest.main import main
 from Credentials import Credential
 
 class TestAccount(unittest.TestCase):
@@ -25,13 +26,18 @@ class TestAccount(unittest.TestCase):
     self.assertEqual(self.newAccount.accountName, "Instagram")
     self.assertEqual(self.newAccount.l_username, "dennis_250")
     self.assertEqual(self.newAccount.l_password, "moringa01")
-  
+
   def test_saveAccount(self):
     """
       this is about save account and test them using account list
     """
     self.newAccount.saveAccount()
     self.assertEqual(len(Credential.accountList),1)
-        
+  
+  def tearDown(self):
+    Credential.accountList = []
+    
+if __name__ == "__main__":
+  unittest.main()
     
     
