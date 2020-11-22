@@ -1,6 +1,7 @@
 import unittest
 from unittest.main import main
 from Credentials import Credential
+import pyperclip
 
 class TestAccount(unittest.TestCase):
   """
@@ -64,7 +65,17 @@ class TestAccount(unittest.TestCase):
     self.newAccount.deleteAccount()
     self.assertEqual(len(Credential.accountList),1)
   
+  def copypasswordTest(self):
+    """
+      this functions helps to copy password and test if it was successfully copied on clipboard
+    """
+    self.newAccount.saveAccount()
+    Credential.copyPwd('moriinga03')
+    self.assertEqual(self.newAccount.l_password, pyperclip.paste())
   
+
+    
+    
     
 if __name__ == "__main__":
   unittest.main()
