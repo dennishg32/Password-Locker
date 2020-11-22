@@ -1,5 +1,4 @@
 import unittest
-from unittest.main import main
 from Credentials import Credential
 import pyperclip
 
@@ -114,12 +113,5 @@ class TestAccount(unittest.TestCase):
     findbyUsername = Credential.findByuser()
     self.assertEqual(findbyUsername.l_username. testAccount.l_username)
     
-  
-    
-    
-    
-    
 if __name__ == "__main__":
   unittest.main()
-    
-    

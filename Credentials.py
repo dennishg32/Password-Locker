@@ -31,12 +31,14 @@ class Credential:
   @classmethod
   def findAll(cls):
     """
+       functions to test all saved accounts
     """
     return cls.accountList
   
   @classmethod
   def findByusername(cls, account):
     """
+      function to test account by user name
     """
     for user in cls.accountList:
       if user.accountName == account:
