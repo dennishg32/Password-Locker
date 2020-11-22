@@ -80,6 +80,23 @@ class TestAccount(unittest.TestCase):
     random = Credential.pwd_random()
     self.assertTrue(random)
     
+  def findByUsername(self):
+    """
+      function to test account by username
+    """
+    self.newAccount.saveAccount()
+    testAccount = Credential(
+      "Pinterest",
+      "Dennis Hg"
+      "momo05"
+    )
+    testAccount.saveAccount()
+    findbyUsername = Credential.findByuser()
+    self.assertEqual(findbyUsername.l_username. testAccount.l_username)
+    
+    
+    
+    
     
     
 if __name__ == "__main__":
