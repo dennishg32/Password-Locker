@@ -25,6 +25,11 @@ To access this app you must have
 - After all user will to go through steps
 - User will have an option to exit
 
+## TDD
+
+- Single class Test for user functions
+- Single class Test for Credential functions
+- 
 
 ## Known Bugs
 
