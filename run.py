@@ -1,7 +1,6 @@
 #!/usr/env python3.6
 from User import User
 from Credentials import Credential
-import random
 
 def createuser(firstname, lastname, username, password):
   """
@@ -16,11 +15,11 @@ def saveUser(person):
   """
   person.saveUser()
   
-def userList():
+def allUser():
   """
     function to display all users
   """
-  return User.userList()
+  return User.allUser()
 
 def createAccount(accountName, l_username, l_password):
   """
@@ -41,25 +40,25 @@ def deleteAccount(creds):
   """
   creds.deleteAccount()
   
-def findAccount(creds):
+def findByusername(creds):
   """
     find account by username
   """
   return Credential.findByusername(creds)
 
-def findallAccount():
+def findAll():
   """
     display all account
   """
   return Credential.findAll()
 
-def existAccount(creds):
+def existingAccount(creds):
   """
     checks exist account credential
   """
   return Credential.existingAccount(creds)
   
-def pwdGenerator(creds):
+def pwd_random(creds):
   """
     generating a random password
   """
@@ -90,7 +89,7 @@ def main():
         password = input("Enter your password:  \n")
         break
       elif pwd == 'ii':  
-        password = pwdGenerator()
+        password = pwd_random()
         break
       else:
         print("wrong choice")
@@ -105,8 +104,8 @@ def main():
     print("Welcome again!!!")
     username = input('username: ')
     pwd = input('\npassword: ')
-    signin = existAccount(username, pwd)
-    if existAccount == signin:
+    signin = existingAccount(username, pwd)
+    if existingAccount == signin:
       print(f"Mr/s {username} its good to have u back")
       print('\n================================')
   
@@ -116,11 +115,11 @@ def main():
     print('\n================================')
     cd = input().lower()
     if cd == 'dd':
-      if findallAccount:
+      if findAll():
         print('\n================================')
         print("List of accounts")
         print('\n================================')
-        for acc in findallAccount:
+        for acc in findAll():
           print(f"Account: {acc.accountName}\n Username: {username}\n Password: {password}")
           print('\n================================')
       else:    
@@ -130,8 +129,8 @@ def main():
       print("Enter Your AccountName")
       print('\n================================')
       find = input().lower()
-      if findAccount(find):
-        creds = findAccount(find)
+      if findByusername(find):
+        creds = findByusername(find)
         print('\n================================')
         print(f"Account Name: {creds.accountName}")
         print('\n================================')
@@ -141,15 +140,15 @@ def main():
         print("Invalid Account")
         print('\n================================')
     elif cd == 'ga':
-      pwd = pwdGenerator()
+      pwd = pwd_random()
       print(f"{pwd} has been generated")
     
     elif cd == 'dt':
       print("Enter AccountName to delete")
       print('\n================================')
       find = input().lower()
-      if findAccount(find):   
-        creds = findAccount(find)
+      if findByusername(find):   
+        creds = findByusername(find)
         print('\n================================')
         creds.deleteAccount()
         print(f"{creds.accountName} has been deleted!!")
@@ -162,7 +161,5 @@ def main():
     else:
       print("loadingggggggggggg..... try again later please")
       
-    
-
 if __name__ == "__main__":
   main()
