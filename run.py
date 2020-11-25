@@ -62,7 +62,7 @@ def pwd_random(creds):
   """
     generating a random password
   """
-  pwd = Credential.pwd_random()
+  pwd = Credential.pwd_random(creds)
   return pwd
 
 def main():
